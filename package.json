@@ -2,18 +2,15 @@
   "name": "recipe-app-backend",
   "version": "1.0.0",
   "description": "Backend for the Recipe App using Express and MongoDB",
-  
   "scripts": {
     "vercel-build": "npm run build && npm start",
-    "build": "npm run build --prefix app",   
-    "start": "npm run start --prefix app",   
-    "dev": "npm run dev --prefix app"        
+    "build": "npm run build --prefix app",
+    "start": "node app.js",
+    "dev": "nodemon app.js"        
   },
-  
   "keywords": [],
   "author": "Your Name",
   "license": "ISC",
-  
   "dependencies": {
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
@@ -24,7 +21,6 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.7.2"
   },
-  
   "devDependencies": {
     "nodemon": "^3.1.7"
   }
