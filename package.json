@@ -4,7 +4,7 @@
   "description": "Backend for the Recipe App using Express and MongoDB",
   
   "scripts": {
-    "vercel-build": "vercel dev",      
+    "vercel-build": "npm run build && npm start",
     "build": "npm run build --prefix app",   
     "start": "npm run start --prefix app",   
     "dev": "npm run dev --prefix app"        
