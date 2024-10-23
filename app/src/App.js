@@ -1,9 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Login from './components/Login';
-import Register from './components/Register';
-import Dashboard from './components/Dashboard';
-import Favorites from './components/Favorites';
 import HomePage from './pages/HomePage';
 import Navbar from './components/common/NavBar';
 import LoginPage from './pages/LoginPage';
