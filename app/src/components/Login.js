@@ -5,8 +5,6 @@ import '../styles/login.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,56 +13,52 @@ const Login = () => {
       localStorage.setItem('token', response.data.token);
       console.log(response.data.token);
       window.location.reload('/homepage');
-    } catch (err) {
+    } catch (error) {
       alert('Invalid email or password');
-      setError('Invalid email or password');
     }
   };
 
   return (
-
-<>
-      <div class="container d-flex justify-content-center align-items-center min-vh-100">
-    <div class="loginCard p-5 shadow">
-        <div class="text-center mb-4">
-            <h2 class="logoText">COOK</h2>
-
-        </div>
-        <h3 class="text-center mb-4">Sign in</h3>
-        <form onSubmit={handleSubmit}>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input class="form-control"
-            type="email"
-            value={email}
-            placeholder='@gmail.com'
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-                
+    <>
+      <div className="container d-flex justify-content-center align-items-center min-vh-100">
+        <div className="loginCard p-5 shadow">
+          <div className="text-center mb-4">
+            <h2 className="logoText">COOK</h2>
+          </div>
+          <h3 className="text-center mb-4">Sign in</h3>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">Email address</label>
+              <input
+                className="form-control"
+                type="email"
+                value={email}
+                placeholder='@gmail.com'
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
-            <div class="mb-2">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" 
-                value={password} 
-                onChange={(e)=> setPassword(e.target.value)}  
-                class="form-control " 
-                id="password" placeholder="********"/>
-    
+            <div className="mb-2">
+              <label htmlFor="password" className="form-label">Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="form-control"
+                id="password"
+                placeholder="********"
+              />
             </div>
-            <div class="d-grid">
-                <button type="submit" class="btn btn-primary btn-block">SIGN IN</button>
+            <div className="d-grid">
+              <button type="submit" className="btn btn-primary btn-block">SIGN IN</button>
             </div>
-         
-        </form>
-        <div class="text-center mt-4">
+          </form>
+          <div className="text-center mt-4">
             <p>Don't have an account? <a href="/register">Create an account</a></p>
+          </div>
         </div>
-    </div>
-</div>
-</>
-     
-
+      </div>
+    </>
   );
 };
 
